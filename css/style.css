@@ -1,0 +1,362 @@
+@font-face {
+    font-family: Inter-Regular;
+    src: url(../assets/fonts/static/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter-Bold;
+    src: url(../assets/fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: Inter-ExtraBold;
+    src: url(../assets/fonts/static/Inter-ExtraBold.ttf);
+}
+
+*{
+    font-family: Inter-Regular;
+}
+
+body{
+    position: block;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+}
+/*===========Navbar============START===*/
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: white;
+    width: 100%;
+}
+
+.navbar-container nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.navbar-container nav ul li a{
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-container nav ul li a:hover{
+    color: hsl(5, 85%, 63%);
+}
+
+/*===========Navbar============END===*/
+
+/*===========Hamburger Menu============START===*/
+
+#hamburger{
+    position: relative;
+    display: none;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+#hamburger #bar, #hamburger::after, #hamburger::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+#hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-8px, 7px);
+}
+
+#hamburger.is-active #bar{
+    opacity: 0;
+}
+
+#hamburger.is-active::after {
+    transform: rotate(45deg) translate(-8px, -7px);
+}
+
+@media (max-width: 900px) {
+    .navbar-container nav{
+        display: none;
+    }
+
+    #hamburger{
+        display: block;
+    }
+}
+
+
+/*===========Hamburger Menu============END===*/
+
+/*===========Open Mobile navbar============START===*/
+
+.openMobileNav{
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    width: 75vw;
+    height: 100vh;
+    right: 0;
+    left: 25vw;
+    background-color: white;
+    
+}
+
+.closedMobileNav{
+    transform: translateX(100%);
+}
+
+.openMobileNav ul{
+    list-style-type: none;
+    line-height: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.openMobileNav ul a{
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: Inter-Bold;
+    margin-left: 2rem;
+}
+
+
+.greyBoxOpen{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 25vw;
+    top: 0;
+    left: 0;
+    right: 75vw;
+
+    opacity: 1;
+}
+
+.greyBoxClosed{
+    opacity: 0;
+}
+
+@media (min-width: 900px) {
+    .greyBoxOpen{
+        display: none;
+    }
+
+    .openMobileNav{
+        display: none;
+    }
+
+}
+/*===========Open Mobile navbar============END===*/
+
+.main-grid{
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 900px) {
+    .main-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+}
+}
+
+/*===========Banner Img============START===*/
+
+.banner-img img{
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .banner-img{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    overflow: hidden;
+}
+}
+
+/*===========Banner Img============END===*/
+
+/*===========News Box============START===*/
+
+.new-box{
+    background-color: hsl(240, 100%, 5%);
+
+    color: hsl(233, 8%, 79%);
+    padding: 2rem;
+}
+
+.new-box h1{
+    color: hsl(35, 77%, 62%);
+    font-size: 3rem;
+    font-family: Inter-Bold;
+    margin: 0;
+}
+
+.new-box h2{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.new-box p{
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    color: hsl(233, 8%, 79%);
+}
+
+.new-box a{
+    text-decoration: none;
+}
+
+.new-box p:nth-child(9){
+    margin-bottom: 0;
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 900px) {
+    .new-box{
+       grid-row-start: 1;
+       grid-row-end: 3; 
+    }
+    
+}
+
+/*===========News Box==========END==*/
+
+/*===========Web3============START===*/
+
+.web3-headline h1{
+    font-size: 4.5rem;
+    font-family: Inter-ExtraBold;
+    margin: 1rem 0;
+    line-height: 5rem;
+}
+
+.web3-text p{
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 3.5rem;
+}
+
+.web3-text a{
+    background-color: hsl(5, 85%, 63%);
+    color: white;
+    text-decoration: none;
+    padding: .8rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+@media (min-width: 900px) {
+    .web3{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 2rem;
+    }
+
+    .web3-headline h1{
+        font-size: 4.5rem;
+        margin: 0;
+        line-height: 4rem;
+    }
+}
+/*===========Web3============END===*/
+
+/*===========Article============START===*/
+
+.article01, .article02, .article03{
+    grid-template-columns: 1fr 3fr;
+    padding: 2rem 0;
+}
+
+.article01 img{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 30%;
+    float: left;
+    margin-right: 1rem;
+}
+.article02 img{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 30%;
+    float: left;
+    margin-right: 1rem;
+}
+.article03 img{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 30%;
+    float: left;
+    margin-right: 1rem;
+}
+
+.articles-textbox h1, h2, p{
+    margin: 0;
+}
+
+.articles-textbox h1{
+    font-family: Inter-Bold;
+    color: hsl(233, 8%, 79%);
+}
+
+.articles-textbox h2{
+    font-family: Inter-Bold;
+    margin: .5rem 0;
+}
+
+.articles-textbox a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 900px) {
+    .articles-textbox h1{
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .articles-textbox h1{
+        font-size: 2rem;
+    }
+
+    .articles-textbox h2{
+        font-size: 1rem;
+    }
+}
+
+/*===========Article============END===*/
