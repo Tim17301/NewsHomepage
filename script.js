@@ -24,6 +24,14 @@
         $("#hamburger").toggleClass("is-active");
         $(".openMobileNav").toggleClass("closedMobileNav");
         $(".greyBoxOpen").toggleClass("greyBoxClosed");
+
+        if (fixed==false){
+            fixed = true;
+            $("body").css("position", "fixed");
+        } else if (fixed==true){
+            fixed = false;
+            $("body").css("position", "");
+        }
     });
 
     $(".greyBoxOpen").on("click", function(){
