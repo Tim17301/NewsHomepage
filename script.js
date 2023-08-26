@@ -40,6 +40,10 @@
         $(".greyBoxOpen").addClass("greyBoxClosed");
     });
 
+    if ($(window).width() < 700){
+        $(".banner-img img").attr("src", "assets/images/image-web-3-mobile.jpg");
+    }
+
     $(document).ready(function(){
         $(window).resize(function(){
             if ($(window).width() < 700){
